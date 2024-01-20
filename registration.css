@@ -1,0 +1,9 @@
+body{background-color:rgb(26, 145, 214);}
+h1{font-style: copperplate;}
+#fname{width:14%; padding: 12px 20px; margin:8px 0px; border-radius: 4px;}
+#lname{width:14%; padding: 12px 20px; margin:8px 0px; border-radius: 4px;}
+#fname{width:14%; padding: 12px 20px; margin:8px 0px; border-radius: 4px;}
+#username{width:14%; padding: 12px 20px; margin:8px 0px; border-radius: 4px;}
+#password{width:14%; padding: 12px 20px; margin:8px 0px; border-radius: 4px;}
+#DOB{width:14%; padding: 12px 20px; margin:8px 0px; border-radius: 4px;}
+#pnumber{width:14%; padding: 12px 20px; margin:8px 0px; border-radius: 4px;}
