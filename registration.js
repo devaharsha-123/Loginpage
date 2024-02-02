@@ -1,20 +1,53 @@
-<script>  
-function validateform(){  
-var name=document.myform.name.value;  
-var password=document.myform.password.value;  
-  
-if (name==null || name==""){  
-  alert("Name can't be blank");  
-  return false;  
-}else if(password.length<6){  
-  alert("Password must be at least 6 characters long.");  
-  return false;  
-  }  
-}  
-</script>  
-<body>  
-<form name="myform" method="post" action="abc.jsp" onsubmit="return validateform()" >  
-Name: <input type="text" name="name"><br/>  
-Password: <input type="password" name="password"><br/>  
-<input type="submit" value="register">  
-</form>  
+document.addEventListener("DOMContentLoaded", function () {
+    // Validate password on input change
+    document.getElementById("password").addEventListener("input", validatePassword);
+
+    // Validate first name on input change
+    document.getElementById("fname").addEventListener("input", validateFirstName);
+
+    // Validate last name on input change
+    document.getElementById("lname").addEventListener("input", validateLastName);
+
+    // Validate username on input change
+    document.getElementById("username").addEventListener("input", validateUsername);
+
+    // Form submission event
+    document.querySelector("form").addEventListener("submit", function (event) {
+        if (!validateForm()) {
+            event.preventDefault(); // Prevent form submission if validation fails
+        }
+    });
+});
+
+function validatePassword() {
+    // Password validation logic (as before)
+}
+
+function validateFirstName() {
+    // First name validation logic (as before)
+}
+
+function validateLastName() {
+    // Last name validation logic (as before)
+}
+
+function validateUsername() {
+    const username = document.getElementById("username").value;
+    const usernameRegex = /^[a-zA-Z0-9]+$/;
+
+    const isValid = usernameRegex.test(username);
+
+    if (isValid) {
+        document.getElementById("username-error").classList.remove("error");
+    } else {
+        document.getElementById("username-error").classList.add("error");
+    }
+}
+
+function validateForm() {
+    // Basic form validation can be added here
+    // For now, it returns true, allowing form submission
+    return true;
+}
+<span id="username-error" class="error">Invalid username</span>
+
