@@ -20,15 +20,47 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function validatePassword() {
-    // Password validation logic (as before)
+     function validatePassword() {
+    const password = document.getElementById("password").value;
+    const upperRegex = /[A-Z]/;
+    const specialCharRegex = /[!@#$%^&*(),.?":{}|<>]/g;
+    const numberRegex = /\d/g;
+
+    document.getElementById("upper").classList.toggle("valid", upperRegex.test(password));
+    document.getElementById("sp_char").classList.toggle("valid", specialCharRegex.test(password) && specialCharRegex.test(password));
+    document.getElementById("number").classList.toggle("valid", numberRegex.test(password) && numberRegex.test(password));
+    document.getElementById("length").classList.toggle("valid", password.length >= 15);
+}
 }
 
 function validateFirstName() {
-    // First name validation logic (as before)
+    function validateFirstName() {
+    const firstName = document.getElementById("fname").value;
+    const nameRegex = /^[A-Za-z]+$/;
+
+    const isValid = nameRegex.test(firstName);
+
+    if (isValid) {
+        document.getElementById("fname-error").classList.remove("error");
+    } else {
+        document.getElementById("fname-error").classList.add("error");
+    }
+}
 }
 
 function validateLastName() {
-    // Last name validation logic (as before)
+    function validateLastName() {
+    const lastName = document.getElementById("lname").value;
+    const nameRegex = /^[A-Za-z]+$/;
+
+    const isValid = nameRegex.test(lastName);
+
+    if (isValid) {
+        document.getElementById("lname-error").classList.remove("error");
+    } else {
+        document.getElementById("lname-error").classList.add("error");
+    }
+}
 }
 
 function validateUsername() {
